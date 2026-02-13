@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para ti 💗</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- INTRO -->
+<section id="intro">
+  <img src="pulpo.png" class="pulpo">
+  <h1>Negra, ojitos bonitos</h1>
+  <p>Si estás aquí, gracias por darte este momento.</p>
+  <button onclick="entrar()">Presiona aqui</button>
+</section>
+
+<!-- MENSAJE -->
+<section id="mensaje1" class="hidden">
+  <p id="tuMensaje"></p>
+
+  <div class="fotos">
+    <div class="col">
+      <img src="fotos/1.jpg">
+      <img src="fotos/2.jpg">
+      <img src="fotos/3.jpg">
+    </div>
+    <div class="col">
+      <img src="fotos/4.jpg">
+      <img src="fotos/5.jpg">
+      <img src="fotos/6.jpg">
+    </div>
+  </div>
+
+  <div class="botones">
+    <button onclick="extrañas()">¿Me extrañas?</button>
+    <button onclick="mostrar('puzzle')">Continuar</button>
+  </div>
+
+  <p id="respuesta" class="hidden respuesta"></p>
+</section>
+
+<!-- PUZZLE -->
+<section id="puzzle" class="hidden">
+  <h2>My bright light tienes que resolver este rompecabezas </h2>
+
+  <div id="puzzle-container"></div>
+
+  <!-- CUADRO FINAL -->
+  <div id="puzzleCompleteBox" class="hidden">
+    <p id="finalPuzzleText">
+      ✨ Nos ibamos a casar aqui lo recuerdas :( ✨
+    </p>
+
+    <button id="nextBtn">
+      Sigue hay mas
+    </button>
+  </div>
+
+</section>
+
+<!-- JUEGO -->
+<section id="juego" class="hidden">
+  <h2>Completa las frases 💕</h2>
+  <p>Une las frases correctas negrita</p>
+
+  <div id="memoryGame"></div>
+  <p id="memoryMsg"></p>
+</section>
+
+<!-- VIDEO -->
+<section id="video" class="hidden">
+  <video width="300" controls>
+    <source src="video/mivideo.mp4" type="video/mp4">
+  </video>
+
+  <p>
+    Gracias por llegar hasta aquí.<br>
+    Te amo demasiado y en serio te extraño como no tienes idea.
+    Espero te guste este video, lo hize con mucho amor
+  </p>
+
+  <button onclick="mostrar('final')">Presiona aquí</button>
+</section>
+
+<!-- FINAL -->
+<section id="final" class="hidden">
+  <img src="fotos/final.jpg" class="final">
+
+  <p class="mensaje-final">
+    Eres lo más bonito que me ha pasado y no voy a dejarte 💗<br>
+    Te ame, te amo y te amare aun asi tu ya no, yo estare aqui siempre porque verdaderamente eres mi religion Allison Ariana Vega Agapito, te extraño demasiado. Se que no soy el hombre perfecto, se que tengo muchos errores pero te amo como no tienes idea y no soporto la idea de tener que alejarme de ti :(, solo quiero estar contigo, solo te quiero a ti, solo tu eres mi amor MI AMOR VERDADERO.
+  </p>
+</section>
+
+
+<audio id="music1" src="musica1.mp3" loop></audio>
+<audio id="musicaFinal" src="musicafinal.mp3" loop></audio>
+
+
+<script src="script.js"></script>
+<script src="puzzle.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

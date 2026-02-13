@@ -1,0 +1,278 @@
+/* ========================= */
+/* ===== GENERAL ===== */
+/* ========================= */
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  text-align:center;
+  background:#ffd9e6;
+  color:#333;
+}
+
+section{
+  padding:30px 20px;
+}
+
+.hidden{
+  display:none;
+}
+
+/* ========================= */
+/* ===== PULPITO ===== */
+/* ========================= */
+
+.pulpo{
+  width:140px;
+  margin-top:30px;
+  animation: pulpoFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes pulpoFloat{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-18px); }
+  100%{ transform: translateY(0); }
+}
+
+/* ========================= */
+/* ===== BOTONES ===== */
+/* ========================= */
+
+button{
+  padding:12px 20px;
+  margin:10px;
+  border:none;
+  border-radius:8px;
+  background:#ff6fa5;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition: .25s ease;
+}
+
+button:hover{
+  background:#ff4d8d;
+  transform: scale(1.05);
+}
+
+/* ========================= */
+/* ===== FOTOS ===== */
+/* ========================= */
+
+.fotos{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:20px;
+}
+
+.col img{
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  margin:5px;
+  border-radius:12px;
+  animation: flotar 4s ease-in-out infinite;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.col img:nth-child(2){ animation-delay:1s; }
+.col img:nth-child(3){ animation-delay:2s; }
+
+@keyframes flotar{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-12px); }
+  100%{ transform: translateY(0); }
+}
+
+.respuesta{
+  font-weight:bold;
+  margin-top:15px;
+}
+
+/* ========================= */
+/* ===== CANVAS / VIDEO ===== */
+/* ========================= */
+
+canvas{
+  background:white;
+  margin-top:20px;
+  border-radius:10px;
+}
+
+#gameArea{
+  margin-top:20px;
+}
+
+.final{
+  width:250px;
+  border-radius:15px;
+}
+
+/* ========================= */
+/* ===== PUZZLE ===== */
+/* ========================= */
+
+#puzzle-container{
+  display:grid;
+  grid-template-columns: repeat(5, 80px);
+  gap:6px;
+  justify-content:center;
+  margin-top:20px;
+}
+
+.tile{
+  width:80px;
+  height:80px;
+  border-radius:10px;
+  cursor:grab;
+  background-repeat:no-repeat;
+  background-size:400px 400px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.18);
+  transition:.15s ease;
+  user-select:none;
+}
+
+.tile:hover{
+  transform:scale(1.06);
+}
+
+.tile:active{
+  cursor:grabbing;
+  transform:scale(.96);
+}
+
+/* ========================= */
+/* ===== CUADRO FINAL ===== */
+/* ========================= */
+
+#puzzleCompleteBox{
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  background:white;
+  padding:28px 25px;
+  border-radius:18px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.35);
+  text-align:center;
+  width:270px;
+  z-index:9999;
+}
+
+#puzzleCompleteBox p{
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+#puzzleCompleteBox button{
+  width:100%;
+  margin-top:10px;
+}
+
+/* ========================= */
+/* ===== MENSAJES FLOTANTES ===== */
+/* ========================= */
+
+.floating-msg{
+  position:fixed;
+  bottom:60px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#ffb6c1;
+  padding:12px 20px;
+  border-radius:25px;
+  font-weight:bold;
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
+  animation: floatUp 3s ease forwards;
+}
+
+@keyframes floatUp{
+  from { opacity:1; transform: translate(-50%, 0); }
+  to { opacity:0; transform: translate(-50%, -120px); }
+}
+
+/* ========================= */
+/* ===== MEMORY GAME ===== */
+/* ========================= */
+
+#memoryGame{
+  display:grid;
+  grid-template-columns: repeat(3, 140px);
+  gap:18px;
+  justify-content:center;
+  margin-top:25px;
+}
+
+
+.memory-card{
+  width:140px;
+  height:90px;
+  background:linear-gradient(135deg,#ff6fa5,#ff9ec4);
+  color:white;
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:16px;
+  cursor:pointer;
+  text-align:center;
+  padding:10px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.18);
+  transition: .25s;
+}
+
+.memory-card.activa{
+  transform:scale(1.08);
+}
+
+.memory-card.correcta{
+  background:#ffd1e3;
+  color:#ff2f7a;
+  font-weight:bold;
+  transform:scale(1.05);
+}
+ .mensaje-final{
+  margin-top:20px;
+  font-size:20px;
+  font-weight:bold;
+  color:#ff2f7a;
+  animation: aparecer 2s ease;
+}
+
+@keyframes aparecer{
+  from{ opacity:0; transform: translateY(20px);}
+  to{ opacity:1; transform: translateY(0);}
+}
+
+/* 💗 CORAZONES FLOTANTES */
+.hearts{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.heart{
+  position:absolute;
+  bottom:-20px;
+  font-size:22px;
+  animation: subir 6s linear infinite;
+  opacity:0.8;
+}
+
+@keyframes subir{
+  from{
+    transform: translateY(0) scale(1);
+    opacity:0.9;
+  }
+  to{
+    transform: translateY(-110vh) scale(1.8);
+    opacity:0;
+  }
+}
+
